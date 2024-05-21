@@ -1,4 +1,3 @@
-import moviesRouter from "./movies";
-import genresRouter from "./genres";
+import tmdbRouter from "./tmdb";
 
-export { moviesRouter, genresRouter };
+export { tmdbRouter };

@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 
-import { genresRouter, moviesRouter } from "./app/routes";
+import { tmdbRouter } from "./app/routes";
 
 dotenv.config();
 
@@ -13,8 +13,7 @@ app.get("/", (req, res) => {
   res.send("Hello server!");
 });
 
-app.use("/genres", genresRouter);
-app.use("/movies", moviesRouter);
+app.use("/api/tmdb", tmdbRouter);
 
 const port = 3000;
 
