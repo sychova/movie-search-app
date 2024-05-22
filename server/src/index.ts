@@ -1,9 +1,7 @@
-import express from "express";
 import dotenv from "dotenv";
-
-import { tmdbRouter } from "./app/routes";
-
+import express from "express";
 dotenv.config();
+import { tmdbRouter } from "./app/routes";
 
 const app = express();
 
@@ -15,8 +13,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/tmdb", tmdbRouter);
 
-const port = 3000;
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
 });

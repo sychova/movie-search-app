@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: process.env.TMDB_BASE_URL,
   headers: {
-    Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
-    "content-type": "application/json",
+    Authorization: `Bearer ${process.env.TMDB_API_AUTH_TOKEN}`,
+    accept: "application/json",
   },
 });
 

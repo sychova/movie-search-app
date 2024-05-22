@@ -5,7 +5,7 @@ import { tmdbController } from "../controllers";
 const tmdbRouter: Router = express.Router();
 
 tmdbRouter.get("/movies", tmdbController.getMovies);
-tmdbRouter.get("/:id", tmdbController.getMovieById);
+tmdbRouter.get("/movies/:id", tmdbController.getMovieById);
 
 tmdbRouter.get("/genres", tmdbController.getGenres);
 
