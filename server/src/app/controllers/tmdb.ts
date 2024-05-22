@@ -1,9 +1,12 @@
 import { Request, Response } from "express";
 import { TmdbMovieApi, TmdbGenreApi } from "../services/tmdb/api";
+import { buildQueryString } from "../utils/queryStringBuilder";
 
 export const getMovies = async (req: Request, res: Response) => {
   try {
-    const data = await TmdbMovieApi.getAll();
+    const query = buildQueryString(req.query);
+
+    const data = await TmdbMovieApi.getAll(query);
 
     res.json(data);
   } catch (error) {
